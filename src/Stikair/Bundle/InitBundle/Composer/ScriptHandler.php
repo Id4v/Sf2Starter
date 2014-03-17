@@ -44,9 +44,22 @@ class ScriptHandler {
         }
 
         static::executeCommand($event, $appDir, 'doctrine:database:create', $options['process-timeout']);
-        $event->getIO()->write("--- Création de la BDD ---");
-        static::executeCommand($event, $appDir, "doctine:schema:update --dump-sql",$options['process-timeout']);
-        static::executeCommand($event, $appDir, "doctine:schema:update --force",$options['process-timeout']);
+    }
+
+    public static function UpdateDb(CommandEvent $event) {
+
+        $options = self::getOptions($event);
+        $appDir = $options['symfony-app-dir'];
+
+        if (!is_dir($appDir)) {
+            echo 'The symfony-app-dir (' . $appDir . ') specified in composer.json was not found in ' . getcwd() . ', can not clear the cache.' . PHP_EOL;
+
+            return;
+        }
+
+        $event->getIO()->write("--- Ajout des tables dans la BDD ---");
+        static::executeCommand($event, $appDir, "doctrine:schema:update --dump-sql", $options['process-timeout']);
+        static::executeCommand($event, $appDir, "doctrine:schema:update --force", $options['process-timeout']);
         $event->getIO()->write("--- Done ---");
     }
 
@@ -67,22 +80,20 @@ class ScriptHandler {
 
         static::executeCommand($event, $appDir, 'init:acl', $options['process-timeout']);
     }
-    
-    
+
     public static function createSuperAdminUser(CommandEvent $event) {
-        $cmd="fos:user:create --super-admin";
-        
-        $params=array("username"=>"adminovs","email"=>"devteam@overscan.fr","password"=>"adminovs");
-        
-        $io=$event->getIO();
-        
+        $cmd = "fos:user:create --super-admin";
+
+        $params = array("username" => "adminovs", "email" => "devteam@overscan.fr", "password" => "adminovs");
+
+        $io = $event->getIO();
+
         $io->write("--- Création du super-admin ---");
-        foreach ($params as $key=>$default)
-        {
+        foreach ($params as $key => $default) {
             $value = $io->ask(sprintf('<question>%s</question> (<comment>%s</comment>): ', $key, $default), $default);
-            $paramsGiven[$key]=$value;
+            $paramsGiven[$key] = $value;
         }
-        
+
         $options = self::getOptions($event);
         $appDir = $options['symfony-app-dir'];
 
@@ -92,13 +103,12 @@ class ScriptHandler {
             return;
         }
 
-        $cmd.=" ".$paramsGiven['username']." ".$paramsGiven['email']." ".$paramsGiven['password'];
-        
+        $cmd.=" " . $paramsGiven['username'] . " " . $paramsGiven['email'] . " " . $paramsGiven['password'];
+
         static::executeCommand($event, $appDir, $cmd, $options['process-timeout']);
-        static::executeCommand($event, $appDir, "sonata:admin:setup-acl",$options['process-timeout']);
+        static::executeCommand($event, $appDir, "sonata:admin:setup-acl", $options['process-timeout']);
         $io->write("--- Done ---");
     }
-
 
     protected static function executeCommand(CommandEvent $event, $appDir, $cmd, $timeout = 300) {
         $php = escapeshellarg(self::getPhp());
