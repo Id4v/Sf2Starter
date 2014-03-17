@@ -1,5 +1,5 @@
 {
-    "name": "symfony/framework-standard-edition",
+    "name": "stikair/sf2starter",
     "license": "MIT",
     "type": "project",
     "description": "The \"Symfony Standard Edition\" distribution",
