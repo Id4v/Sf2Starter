@@ -1,3 +1,0 @@
-stikair_init_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: StikairInitBundle:Default:index }
