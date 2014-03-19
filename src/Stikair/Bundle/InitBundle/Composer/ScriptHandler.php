@@ -18,7 +18,7 @@ use Composer\Script\CommandEvent;
 
 class ScriptHandler {
 
-    public static function extendsUserBundle(CommandEvent $event) {
+    public static function extendUserBundle(CommandEvent $event) {
 
         $options = self::getOptions($event);
         $appDir = $options['symfony-app-dir'];
