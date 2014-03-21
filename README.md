@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/moustikAir/Sf2Starter.svg?branch=develop)](https://travis-ci.org/moustikAir/Sf2Starter)
+
 #Sf2 Starter Kit
 
 Welcome to my Sf2 Starter Kit - a fully-functional Symfony2
