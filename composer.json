@@ -54,7 +54,9 @@
             "file": "app/config/parameters.yml"
         },
         "branch-alias": {
-            "dev-master": "2.3-dev"
+            "dev-master": "2.4-RC",
+            "dev-versions/2.3": "2.3-dev",
+            "dev-versions/2.4": "2.4-dev"
         }
     }
 }
