@@ -19,10 +19,7 @@
         "sensio/framework-extra-bundle": "2.3.*",
         "sensio/generator-bundle": "2.3.*",
         "incenteev/composer-parameter-handler": "~2.0",
-        "sonata-project/doctrine-orm-admin-bundle": "2.2.*",
-        "sonata-project/admin-bundle": "2.2.*",
-        "sonata-project/easy-extends-bundle": "2.1.*",
-        "sonata-project/user-bundle": "2.2.*"
+        "stikair/init-bundle": "1.0.*"
     },
     "scripts": {
         "post-install-cmd": [
@@ -31,7 +28,7 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
-            
+
             "Stikair\\Bundle\\InitBundle\\Composer\\ScriptHandler::extendUserBundle",
             "Stikair\\Bundle\\InitBundle\\Composer\\ScriptHandler::createDb",
             "Stikair\\Bundle\\InitBundle\\Composer\\ScriptHandler::initAcls",
