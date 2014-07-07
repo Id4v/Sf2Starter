@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/moustikAir/Sf2Starter.svg?branch=master)](https://travis-ci.org/moustikAir/Sf2Starter)
+[![Build Status](https://travis-ci.org/Id4v/Sf2Starter.svg?branch=2.5.0)](https://travis-ci.org/Id4v/Sf2Starter)
 
 #Sf2 Starter Kit
 
