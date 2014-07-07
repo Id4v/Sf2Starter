@@ -32,7 +32,7 @@
             "Stikair\\Bundle\\InitBundle\\Composer\\ScriptHandler::extendUserBundle",
             "Stikair\\Bundle\\InitBundle\\Composer\\ScriptHandler::createDb",
             "Stikair\\Bundle\\InitBundle\\Composer\\ScriptHandler::initAcls",
-            "Stikair\\Bundle\\InitBundle\\Composer\\ScriptHandler::UpdateDb",
+            "Stikair\\Bundle\\InitBundle\\Composer\\ScriptHandler::updateDb",
             "Stikair\\Bundle\\InitBundle\\Composer\\ScriptHandler::createSuperAdminUser"
         ],
         "post-update-cmd": [
@@ -54,7 +54,8 @@
             "file": "app/config/parameters.yml"
         },
         "branch-alias": {
-            "dev-master": "2.4-dev",
+            "dev-master" : "2.5-dev",
+            "dev-versions/2.4" : "2.4-dev",
             "dev-versions/2.3": "2.3-dev"
         }
     }
