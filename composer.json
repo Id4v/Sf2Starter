@@ -34,7 +34,7 @@
             "Stikair\\Bundle\\InitBundle\\Composer\\ScriptHandler::extendUserBundle",
             "Stikair\\Bundle\\InitBundle\\Composer\\ScriptHandler::createDb",
             "Stikair\\Bundle\\InitBundle\\Composer\\ScriptHandler::initAcls",
-            "Stikair\\Bundle\\InitBundle\\Composer\\ScriptHandler::UpdateDb",
+            "Stikair\\Bundle\\InitBundle\\Composer\\ScriptHandler::updateDb",
             "Stikair\\Bundle\\InitBundle\\Composer\\ScriptHandler::createSuperAdminUser"
         ],
         "post-update-cmd": [
